@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="ion-text-center">Helden</ion-title>
+      <ion-button class="ion-float-right add-button" (click)="addHero()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let hero of heroes" #slidingItem>
+      <ion-item (click)="showDetailHero(hero)" detail="true">
+        <ion-label>
+          {{ hero.name }}
+          {{ hero.superpower ? '⭐' : '' }}
+          <br>
+          {{ hero.id }}
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option (click)="editHero(hero, slidingItem)">
+          <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-item-option>
+        <ion-item-option (click)="deleteHero(hero)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Detail</ion-title>
+    <ion-button (click)="goBack()" class="back-button">
+      <ion-icon name="backspace"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>
+      <h1>{{ hero?.name }}</h1>
+      <h2>ID: {{ hero?.id }}</h2>
+      <h2>Superpower: {{ hero?.superpower ? hero?.superpower : '/' }}</h2>
+    </ion-label>
+  </ion-item>
+</ion-content>
